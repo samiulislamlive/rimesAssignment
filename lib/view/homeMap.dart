@@ -96,7 +96,7 @@ class _HomeMapState extends State<HomeMap> {
           : FlutterMap(
         options: MapOptions(
           initialCenter: MapData.bangladeshLatLng, // Coordinates for London
-          initialZoom: 7.5,
+          initialZoom: 7.1,
         ),
         children: [
           TileLayer(

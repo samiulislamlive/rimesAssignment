@@ -1,4 +1,5 @@
 
+import '../models/alertModel.dart';
 import '../models/shapeModel.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -12,6 +13,17 @@ class ApiService {
       return ShapeModel.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to load data');
+    }
+  }
+
+
+  Future<AlertModel> fetchAlertData() async {
+    final response = await http.get(Uri.parse('https://bamisapp.bdservers.site/api/exam/alert'));
+
+    if (response.statusCode == 200) {
+      return AlertModel.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to load alert data');
     }
   }
 }
