@@ -9,7 +9,6 @@ class ApiService {
     final response = await http.get(Uri.parse('https://bamisapp.bdservers.site/api/exam/shape'));
 
     if (response.statusCode == 200) {
-      print("getting shapedata ${response.body}");
       return ShapeModel.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to load data');
@@ -21,6 +20,7 @@ class ApiService {
     final response = await http.get(Uri.parse('https://bamisapp.bdservers.site/api/exam/alert'));
 
     if (response.statusCode == 200) {
+      print("getting shapedata ${response.body}");
       return AlertModel.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to load alert data');

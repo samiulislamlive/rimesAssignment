@@ -7,20 +7,20 @@ class AlertModel {
 
   final bool? status;
   final String? message;
-  final List<Result> result;
+  final List<Result1> result;
 
   factory AlertModel.fromJson(Map<String, dynamic> json){
     return AlertModel(
       status: json["status"],
       message: json["message"],
-      result: json["result"] == null ? [] : List<Result>.from(json["result"]!.map((x) => Result.fromJson(x))),
+      result: json["result"] == null ? [] : List<Result1>.from(json["result"]!.map((x) => Result1.fromJson(x))),
     );
   }
 
 }
 
-class Result {
-  Result({
+class Result1 {
+  Result1({
     required this.parameterId,
     required this.upazilaId,
     required this.adm3Pcode,
@@ -48,8 +48,8 @@ class Result {
   final double? valAvg;
   final double? valMax;
 
-  factory Result.fromJson(Map<String, dynamic> json){
-    return Result(
+  factory Result1.fromJson(Map<String, dynamic> json){
+    return Result1(
       parameterId: json["parameter_id"],
       upazilaId: json["upazila_id"],
       adm3Pcode: json["adm3_pcode"],
