@@ -17,7 +17,9 @@ class _MapDetailsState extends State<MapDetails> {
     return Scaffold(
       appBar: AppBar(
           leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.white,
@@ -27,8 +29,8 @@ class _MapDetailsState extends State<MapDetails> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Homepage",
+              const Text(
+                "Details",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
               Row(
