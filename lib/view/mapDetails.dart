@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../constants/colorConst.dart';
 import '../constants/textStyles.dart';
+import '../utils/mapDetailsBox.dart';
 
 class MapDetails extends StatefulWidget {
   String district;
-  MapDetails({super.key, required this.district});
+  String name;
+  int upazilaId;
+  MapDetails(
+      {super.key,
+      required this.district,
+      required this.name,
+      required this.upazilaId});
 
   @override
   State<MapDetails> createState() => _MapDetailsState();
@@ -30,11 +37,18 @@ class _MapDetailsState extends State<MapDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                "Details",
+                "Weather Forecast",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
               Row(
                 children: [
+                  Text(
+                    widget.name,
+                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
                   Text(
                     widget.district,
                     style: const TextStyle(color: Colors.white, fontSize: 16),
@@ -51,6 +65,19 @@ class _MapDetailsState extends State<MapDetails> {
               )
             ],
           )),
+      body: Column(
+        children: [
+          MapDetailsBox(
+            date: '1',
+            day: '1',
+            type: '1',
+            temp: '1',
+            precipitation: '1',
+            humidity: '1',
+            windSpeed: '1',
+          ),
+        ],
+      ),
     );
   }
 }
