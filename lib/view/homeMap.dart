@@ -8,6 +8,7 @@ import '../constants/colorConst.dart';
 import '../constants/mapData.dart';
 import '../constants/textStyles.dart';
 import '../models/shapeModel.dart';
+import '../utils/infoWidget.dart';
 
 class HomeMap extends StatefulWidget {
   const HomeMap({super.key});
@@ -175,23 +176,39 @@ class _HomeMapState extends State<HomeMap> {
             ))
           : errorMessage.isNotEmpty
               ? Center(child: Text(errorMessage))
-              : FlutterMap(
-                  options: MapOptions(
-                    initialCenter:
-                        MapData.bangladeshLatLng,
-                    initialZoom: 7.4,
-                  ),
-                  children: [
-                    TileLayer(
-                      urlTemplate:
-                          'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    ),
-                    PolygonLayer(
-                      polygons: polygons,
-                    ),
-                    MarkerLayer(markers: markers),
-                  ],
-                ),
+              : Stack(
+        children: [
+          FlutterMap(
+            options: MapOptions(
+              initialCenter:
+              MapData.bangladeshLatLng,
+              initialZoom: 7.4,
+            ),
+            children: [
+              TileLayer(
+                urlTemplate:
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+              ),
+              PolygonLayer(
+                polygons: polygons,
+              ),
+              MarkerLayer(markers: markers),
+            ],
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                InfoWidget(title: 'Normal', color: ColorConst.noAlert,),
+                InfoWidget(title: 'Mild', color: ColorConst.mild,),
+                InfoWidget(title: 'Moderate', color: ColorConst.moderate,),
+                InfoWidget(title: 'Severe', color: ColorConst.seavere,),
+                InfoWidget(title: 'Extreme', color: ColorConst.extreme,),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
