@@ -30,9 +30,9 @@ class Result1 {
   final DateTime? forecastDate;
   final DateTime? stepStart;
   final DateTime? stepEnd;
-  final double? valMin;
-  final double? valAvg;
-  final double? valMax;
+  var valMin;
+  var valAvg;
+  var valMax;
 
   Result1({
     required this.parameterId,

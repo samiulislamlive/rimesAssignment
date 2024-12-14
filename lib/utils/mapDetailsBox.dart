@@ -47,7 +47,7 @@ class MapDetailsBox extends StatelessWidget {
         const TextStyle(color: Colors.black, fontSize: 14);
 
     TextStyle detailsBoxSubtitle1 = const TextStyle(
-        color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold);
+        color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold);
 
     return Padding(
       padding: EdgeInsets.all(8.0),

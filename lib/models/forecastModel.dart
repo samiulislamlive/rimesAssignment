@@ -122,9 +122,9 @@ class Rf {
     required this.valAvg,
     required this.valMax,
   });
-  late final int valMin;
-  late final int valAvg;
-  late final int valMax;
+  late var valMin;
+  late var valAvg;
+  late var valMax;
 
   Rf.fromJson(Map<String, dynamic> json){
     valMin = json['val_min'];
@@ -147,9 +147,9 @@ class Temp {
     required this.valAvg,
     required this.valMax,
   });
-  late final double valMin;
-  late final double valAvg;
-  late final double valMax;
+  late var valMin;
+  late var valAvg;
+  late var valMax;
 
   Temp.fromJson(Map<String, dynamic> json){
     valMin = json['val_min'];
@@ -172,9 +172,9 @@ class Rh {
     required this.valAvg,
     required this.valMax,
   });
-  late final double valMin;
-  late final double valAvg;
-  late final double valMax;
+  late var valMin;
+  late var valAvg;
+  late var valMax;
 
   Rh.fromJson(Map<String, dynamic> json){
     valMin = json['val_min'];
@@ -197,9 +197,9 @@ class Windspd {
     required this.valAvg,
     required this.valMax,
   });
-  late final double valMin;
-  late final double valAvg;
-  late final double valMax;
+  late var valMin;
+  late var valAvg;
+  late var valMax;
 
   Windspd.fromJson(Map<String, dynamic> json){
     valMin = json['val_min'];
@@ -222,9 +222,9 @@ class Winddir {
     required this.valAvg,
     required this.valMax,
   });
-  late final double valMin;
-  late final double valAvg;
-  late final double valMax;
+  late var valMin;
+  late var valAvg;
+  late var valMax;
 
   Winddir.fromJson(Map<String, dynamic> json){
     valMin = json['val_min'];
@@ -247,9 +247,9 @@ class Cldcvr {
     required this.valAvg,
     required this.valMax,
   });
-  late final int valMin;
-  late final int valAvg;
-  late final int valMax;
+  late var valMin;
+  late var valAvg;
+  late var valMax;
 
   Cldcvr.fromJson(Map<String, dynamic> json){
     valMin = json['val_min'];
@@ -272,9 +272,9 @@ class Windgust {
     required this.valAvg,
     required this.valMax,
   });
-  late final double valMin;
-  late final double valAvg;
-  late final double valMax;
+  late var valMin;
+  late var valAvg;
+  late var valMax;
 
   Windgust.fromJson(Map<String, dynamic> json){
     valMin = json['val_min'];

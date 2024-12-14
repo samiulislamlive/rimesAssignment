@@ -46,20 +46,20 @@ class _MapDetailsState extends State<MapDetails> {
             children: [
               const Text(
                 "Weather Forecast",
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                style: TextStyle(color: Colors.white, fontSize: 16),
               ),
               Row(
                 children: [
                   Text(
                     widget.name,
-                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                    style: const TextStyle(color: Colors.white, fontSize: 14),
                   ),
                   const SizedBox(
                     width: 10,
                   ),
                   Text(
                     widget.district,
-                    style: const TextStyle(color: Colors.white, fontSize: 16),
+                    style: const TextStyle(color: Colors.white, fontSize: 14),
                   ),
                   const SizedBox(
                     width: 10,
