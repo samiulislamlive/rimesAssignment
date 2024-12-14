@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rimesassignment/constants/colorConst.dart';
 
 class TextStylesConst{
 
@@ -13,6 +14,17 @@ class TextStylesConst{
   );
 
   static TextStyle bodyText = const TextStyle(
+      color: Colors.black,
+      fontSize: 12
+  );
+
+  static TextStyle detailsBoxTitle = TextStyle(
+      color: ColorConst.mainColor,
+      fontWeight: FontWeight.bold,
+      fontSize: 13
+  );
+
+  static TextStyle detailsBoxSubtitle = const TextStyle(
       color: Colors.black,
       fontSize: 12
   );
