@@ -1,16 +1,11 @@
 # rimesassignment
 
-A new Flutter project.
+Map Page:
 
-## Getting Started
+![Screenshot_20241214_125003](https://github.com/user-attachments/assets/7afdbabc-2c4f-4e68-b745-adcd68cf68a1)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Details Page:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_20241214_125018](https://github.com/user-attachments/assets/85c6271a-e4fb-4948-9b18-576cf79943fc)
