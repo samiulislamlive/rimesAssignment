@@ -2,7 +2,8 @@
 
 Map Page:
 
-![Screenshot_20241214_125003](https://github.com/user-attachments/assets/7afdbabc-2c4f-4e68-b745-adcd68cf68a1)
+
+![Screenshot_20241214_132002](https://github.com/user-attachments/assets/198c47f9-4b48-4104-b959-d3fc943a90bf)
 
 
 Details Page:
