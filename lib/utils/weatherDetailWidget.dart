@@ -31,7 +31,7 @@ class WeatherDetailsWidget extends StatelessWidget {
         ),
         dataAvg == null ? Text("${dataMin!}-${dataMax!}$unit",
         style: dataStyle,
-        ):Text(dataAvg!,
+        ):Text(dataAvg!+unit,
           style: dataStyle,
         ),
       ],

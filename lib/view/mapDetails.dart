@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import '../constants/colorConst.dart';
-import '../constants/textStyles.dart';
 import '../models/forecastModel.dart';
 import '../service/apiService.dart';
 import '../utils/mapDetailsBox.dart';
@@ -26,7 +24,7 @@ class _MapDetailsState extends State<MapDetails> {
   @override
   void initState() {
     super.initState();
-    futureWeather = ApiService().fetchForecastData(widget.upazilaId); // Fetch data when screen is initialized
+    futureWeather = ApiService().fetchForecastData(widget.upazilaId);
   }
 
   @override
@@ -75,24 +73,14 @@ class _MapDetailsState extends State<MapDetails> {
               )
             ],
           )),
-      // body: Column(
-      //   children: [
-      //     MapDetailsBox(
-      //       date: '1',
-      //       day: '1',
-      //       type: '1',
-      //       temp: '1',
-      //       precipitation: '1',
-      //       humidity: '1',
-      //       windSpeed: '1',
-      //     ),
-      //   ],
-      // ),
       body: FutureBuilder<ForecastModel>(
         future: futureWeather,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(
+                child: CircularProgressIndicator(
+              color: ColorConst.mainColor,
+            ));
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (snapshot.hasData) {
@@ -116,15 +104,10 @@ class _MapDetailsState extends State<MapDetails> {
                   windSpeed: weather.windspd.valAvg.toString(),
                   windSpeedUnit: weather.windspdUnit,
                 );
-                return ListTile(
-                  title: Text('${weather.date} - ${weather.type}'),
-                  subtitle: Text('Temp: ${weather.temp.valAvg}°C'),
-                  leading: Image.asset('assets/${weather.icon}'),
-                );
               },
             );
           } else {
-            return Center(child: Text('No data available'));
+            return const Center(child: Text('No data available'));
           }
         },
       ),

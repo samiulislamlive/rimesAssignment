@@ -76,7 +76,6 @@ class _HomeMapState extends State<HomeMap> {
             Color fillColor = Colors.transparent;
             double valMin = matchingAlert.valMin ?? 0.0;
 
-            // Set color based on alert values (same logic as before)
             if (valMin > 10) {
               fillColor = ColorConst.noAlert;
             } else if (valMin > 8 && valMin < 10) {
@@ -100,15 +99,13 @@ class _HomeMapState extends State<HomeMap> {
               ),
             );
 
-            // Calculate the centroid for placing the district name
             LatLng centroid = calculateCentroid(polygonCoordinates);
 
-            // Add a marker with the district name at the centroid
+
             if (matchingAlert.district != null && !addedDistricts.contains(matchingAlert.district!)) {
-              // Add the district name to the set to prevent duplicates
+
               addedDistricts.add(matchingAlert.district!);
 
-              // Add a marker with the district name at the centroid
               markers.add(
                 Marker(
                   point: centroid,
@@ -127,7 +124,7 @@ class _HomeMapState extends State<HomeMap> {
                     },
                     child: Text(
                       matchingAlert.district ?? 'No District',
-                      style: TextStyle(color: Colors.white,
+                      style: const TextStyle(color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 6,
                       ),
@@ -142,7 +139,6 @@ class _HomeMapState extends State<HomeMap> {
         }
       }
 
-      // Update the state to reflect the fetched polygons and markers
       setState(() {
         polygons = fetchedPolygons;
         isLoading = false;
@@ -176,13 +172,13 @@ class _HomeMapState extends State<HomeMap> {
           ? Center(
               child: CircularProgressIndicator(
               color: ColorConst.mainColor,
-            )) // Show loading indicator
+            ))
           : errorMessage.isNotEmpty
-              ? Center(child: Text(errorMessage)) // Show error message
+              ? Center(child: Text(errorMessage))
               : FlutterMap(
                   options: MapOptions(
                     initialCenter:
-                        MapData.bangladeshLatLng, // Coordinates for London
+                        MapData.bangladeshLatLng,
                     initialZoom: 7.4,
                   ),
                   children: [
@@ -190,20 +186,6 @@ class _HomeMapState extends State<HomeMap> {
                       urlTemplate:
                           'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                     ),
-                    // MarkerLayer(markers: [
-                    //   Marker(
-                    //       point: const LatLng(23.6850, 90.3563),
-                    //       child: InkWell(
-                    //           onTap: () {
-                    //             Navigator.push(
-                    //                 context,
-                    //                 MaterialPageRoute(
-                    //                     builder: (context) =>
-                    //                         MapDetails(district: "Name")));
-                    //           },
-                    //           child: const Icon(Icons.location_pin,
-                    //               color: Colors.red)))
-                    // ]),
                     PolygonLayer(
                       polygons: polygons,
                     ),

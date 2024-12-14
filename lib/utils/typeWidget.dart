@@ -1,30 +1,32 @@
-
 import 'package:flutter/material.dart';
 
+import '../constants/apiConst.dart';
 import '../constants/colorConst.dart';
 
-
 class TypeWidget extends StatelessWidget {
-  Icon icon;
+  Image image;
   String type;
   TextStyle style;
-  TypeWidget({super.key,
-  required this.icon,
-  required this.type,
-  required this.style,
+  CrossAxisAlignment crossAxisAlignment;
+  TypeWidget({
+    super.key,
+    required this.image,
+    required this.type,
+    required this.style,
+    required this.crossAxisAlignment,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: crossAxisAlignment,
       children: [
-        Icon(Icons.sunny,
-          color: ColorConst.mainColor,
-        ),
-        Text(type,
+        image,
+        Text(
+          type,
           style: style,
         ),
-      ],);
+      ],
+    );
   }
 }
